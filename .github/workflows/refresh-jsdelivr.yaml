@@ -1,0 +1,17 @@
+name: Fetch script's Jsdelivr cache
+
+on:
+  push:
+    paths:
+      - 'acme.sh'
+      - 'root.sh'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Fetch script's Jsdelivr cache
+        run: |
+          curl https://purge.jsdelivr.net/gh/mikupeto/linux-scripts/acme.sh
+          curl https://purge.jsdelivr.net/gh/mikupeto/linux-scripts/root.sh
